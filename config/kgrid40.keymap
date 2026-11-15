@@ -6,6 +6,17 @@
 / {
     /* コンボは干渉を避けるため削除した状態を維持します */
 
+    behaviors {
+        ime_ht: ime_ht {
+            compatible = "zmk,behavior-hold-tap";
+            label = "IME_HT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -14,7 +25,7 @@
 &kp Q    &kp W      &kp E         &kp R      &kp T    &kp Y      &kp U      &kp I      &kp O    &kp P
 &kp A    &kp S      &kp D         &kp F      &kp G    &kp H      &kp J      &kp K      &kp L    &kp BACKSPACE
 &lt 2 Z  &kp X      &kp C         &kp V      &kp B    &kp N      &kp M      &kp COMMA  &kp DOT  &kp SLASH
-&mo 1    &kp LSHFT  &kp LEFT_ALT  &kp LCTRL  &kp TAB  &kp SPACE  &kp ENTER  &kp BSPC   &kp TAB  &kp LC(SPACE)
+&mo 1    &kp LSHFT  &kp LEFT_ALT  &kp LCTRL  &kp TAB  &kp SPACE  &kp ENTER  &kp BSPC   &kp TAB  &kp LC(DELETE)
             >;
         };
 
